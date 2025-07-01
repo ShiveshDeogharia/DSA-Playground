@@ -1,15 +1,3 @@
-/*
- * DSA Showcase Project — main.cpp
- * --------------------------------
- * A menu‑driven console application that lets the user pick a data structure
- * and then exposes a sub‑menu of operations for that structure.
- *
- * Skeleton generated 2025‑07‑01. Flesh out each TODO with full implementations
- * of the data structure operations you want to demonstrate.
- *
- * Build:
- *   g++ -std=c++17 -O2 main.cpp -o dsa_showcase
- */
 
 #include <iostream>
 #include <memory>
@@ -19,18 +7,18 @@
 #include <queue>
 #include <optional>
 
-// ──────────────────────────────────────────────────────────────
+
 // 1.  Common interface every data‑structure menu implements
-// ──────────────────────────────────────────────────────────────
+
 class IDataStructure {
 public:
     virtual void menu() = 0;          // display sub‑menu & dispatch operations
     virtual ~IDataStructure() = default;
 };
 
-// ──────────────────────────────────────────────────────────────
+
 // 2.  Array (dynamic array wrapper around std::vector)
-// ──────────────────────────────────────────────────────────────
+
 class ArrayDS : public IDataStructure {
     std::vector<int> a;
     void print() const {
@@ -70,9 +58,8 @@ public:
     }
 };
 
-// ──────────────────────────────────────────────────────────────
 // 3.  Singly Linked List (simple manual node implementation)
-// ──────────────────────────────────────────────────────────────
+
 class LinkedListDS : public IDataStructure {
     struct Node { int data; Node* next; Node(int d):data(d),next(nullptr){} };
     Node* head = nullptr;
@@ -104,9 +91,9 @@ public:
     ~LinkedListDS(){ while(head){ Node* tmp=head; head=head->next; delete tmp;} }
 };
 
-// ──────────────────────────────────────────────────────────────
+
 // 4.  Stack (adapter around std::stack)
-// ──────────────────────────────────────────────────────────────
+
 class StackDS : public IDataStructure {
     std::stack<int> st;
 public:
@@ -125,9 +112,9 @@ public:
     }
 };
 
-// ──────────────────────────────────────────────────────────────
+
 // 5.  Queue (adapter around std::queue)
-// ──────────────────────────────────────────────────────────────
+
 class QueueDS : public IDataStructure {
     std::queue<int> q;
 public:
@@ -146,9 +133,9 @@ public:
     }
 };
 
-// ──────────────────────────────────────────────────────────────
+
 // 6.  Binary Search Tree (minimal; extend with more ops)
-// ──────────────────────────────────────────────────────────────
+
 class BSTDS : public IDataStructure {
     struct Node{int key; Node* l; Node* r; Node(int k):key(k),l(nullptr),r(nullptr){} };
     Node* root=nullptr;
@@ -170,9 +157,9 @@ public:
     // Destructor to free memory (left as exercise)
 };
 
-// ──────────────────────────────────────────────────────────────
+
 // 7.  Graph (undirected, adjacency list)
-// ──────────────────────────────────────────────────────────────
+
 class GraphDS : public IDataStructure {
     std::vector<std::vector<int>> adj;
 public:
@@ -198,9 +185,9 @@ public:
     }
 };
 
-// ──────────────────────────────────────────────────────────────
+
 // 8. Factory to obtain desired data‑structure object
-// ──────────────────────────────────────────────────────────────
+
 std::unique_ptr<IDataStructure> makeDS(int choice){
     switch(choice){
         case 1: return std::make_unique<ArrayDS>();
@@ -213,12 +200,12 @@ std::unique_ptr<IDataStructure> makeDS(int choice){
     }
 }
 
-// ──────────────────────────────────────────────────────────────
+
 // 9. Main menu loop
-// ──────────────────────────────────────────────────────────────
+
 int main(){
     std::cout<<"==============================\n"
-               "   DSA Showcase (Semester‑3)\n"
+               "   DSA-Playground\n"
                "==============================\n";
     while(true){
         std::cout<<"\nSelect a Data Structure:\n"
