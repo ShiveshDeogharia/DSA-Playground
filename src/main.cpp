@@ -12,7 +12,7 @@
 
 class IDataStructure {
 public:
-    virtual void menu() = 0;          // display sub‑menu & dispatch operations
+    virtual void menu() = 0;  
     virtual ~IDataStructure() = default;
 };
 
@@ -154,7 +154,7 @@ public:
             }
         }
     }
-    // Destructor to free memory (left as exercise)
+    
 };
 
 
@@ -164,7 +164,7 @@ class GraphDS : public IDataStructure {
     std::vector<std::vector<int>> adj;
 public:
     explicit GraphDS(int n=5):adj(n){}
-    void addEdge(int u,int v){ adj[u].push_back(v); adj[v].push_back(u);} // undirected
+    void addEdge(int u,int v){ adj[u].push_back(v); adj[v].push_back(u);} 
     void print() const {
         for(size_t i=0;i<adj.size();++i){
             std::cout<<i<<":";
