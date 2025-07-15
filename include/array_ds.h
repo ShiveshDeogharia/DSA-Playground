@@ -7,8 +7,14 @@ namespace dsa {
 
 class ArrayDS : public IDataStructure {
     std::vector<int> a;
-    void print() const;
+
 public:
+    void push_back(int val);
+    void insert_at(int idx, int val);
+    void erase_at(int idx);
+    int get(int idx) const;
+    int size() const;
+
     void menu() override;
 };
 

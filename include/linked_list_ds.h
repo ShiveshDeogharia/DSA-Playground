@@ -1,7 +1,9 @@
 #pragma once
 #include "interface.h"
 #include <iostream>
-namespace dsa{
+
+namespace dsa {
+
 class LinkedListDS : public IDataStructure {
     struct Node {
         int data;
@@ -11,14 +13,17 @@ class LinkedListDS : public IDataStructure {
 
     Node* head = nullptr;
 
+public:
+    // Core operations for testability
     void push_front(int v);
     void push_back(int v);
-    bool deleteValue(int value);
-    int search(int value) const;
-    void print() const;
+    bool delete_value(int v);
+    int search(int v) const;
+    int size() const;
+    int get(int index) const;
 
-public:
     void menu() override;
     ~LinkedListDS();
 };
+
 }
