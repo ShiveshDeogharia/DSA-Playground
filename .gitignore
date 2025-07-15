@@ -1,6 +1,21 @@
+# Build artifacts
 /build/
-/*.exe
-/*.o
+/Debug/
+/Release/
+/CMakeFiles/
+/CMakeCache.txt
+/Makefile
+/*.vcxproj
+/*.sln
 /*.obj
-*.user
+/*.exe
+
+# IDE files
+.vscode/
+*.code-workspace
+
+# Logs
 *.log
+
+# Mac/Unix junk
+.DS_Store
