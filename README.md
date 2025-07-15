@@ -3,6 +3,11 @@
 
 > An interactive C++ playground to explore and test core Data Structures — built for engineering clarity and competitive coding mastery.
 
+![DSA Playground CLI Demo](screenshots/demo.png)
+
+> 📦 **No setup needed!**  
+> Windows users can [download the `.exe`](https://github.com/ShiveshDeogharia/DSA-Playground/releases) and run it directly.
+
 ---
 
 ## 📌 Overview
