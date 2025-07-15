@@ -1,17 +1,18 @@
-cmake_minimum_required(VERSION 3.15)
-project(DSAPlayground LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.10)
+project(DSAPlayground)
 
-# Use C++20
 set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Enable warnings
-if (MSVC)
-    add_compile_options(/W4 /permissive-)
-else()
-    add_compile_options(-Wall -Wextra -pedantic -Werror)
-endif()
+# Add include directory for headers
+include_directories(include)
 
-# Source files
-add_executable(dsa_playground src/main.cpp)
+# List all source files here
+add_executable(dsa_playground
+    src/main.cpp
+    src/array_ds.cpp
+    src/linked_list_ds.cpp
+    src/stack_ds.cpp
+    src/queue_ds.cpp
+    src/bst_ds.cpp
+    src/graph_ds.cpp
+)
